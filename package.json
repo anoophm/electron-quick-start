@@ -1,10 +1,14 @@
 {
   "name": "electron-quick-start",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "electron-builder": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "dist-mac": "electron-builder -m --x64",
+    "dist-mac-p": "electron-builder -m --x64 -p always"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +21,34 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^6.0.10"
+    "electron": "^6.0.10",
+    "electron-builder": "^21.2.0"
+  },
+  "dependencies": {
+    "electron-log": "^3.0.8",
+    "electron-updater": "^4.1.2"
+  },
+  "build": {
+    "appId": "local.demo.app",
+    "files": [
+      "index.html",
+      "node_modules/**/*",
+      "preload.js",
+      "render.js",
+      "main.js",
+      "package.json"
+    ],
+    "mac": {
+      "icon": "build/icons/mac/icon.icns",
+      "target": ["dmg", "zip"]
+    },
+    "directories": {
+      "output": "./publish/${version}/${os}/${arch}"
+    },
+    "publish": {
+      "provider": "generic",
+      "url": "http://localhost:8050/publish",
+      "publishAutoUpdate": true
+    }
   }
 }
