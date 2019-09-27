@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "electron-log": "^3.0.8",
-    "electron-updater": "^4.1.2"
+    "electron-updater": "^4.1.2",
+    "express": "^4.17.1"
   },
   "build": {
     "appId": "local.demo.app",
@@ -36,7 +37,7 @@
       "index.html",
       "node_modules/**/*",
       "preload.js",
-      "render.js",
+      "renderer.js",
       "main.js",
       "package.json"
     ],
@@ -53,18 +54,18 @@
     "linux": {
       "icon": "build/icons/png",
       "target": [
-          "AppImage"
+        "AppImage"
       ],
       "category": "Education",
       "synopsis": "A desktop learning application with curriculum-linked content for teachers and students",
       "description": "The Desktop Application offers teachers and students unlimited access to curriculum-linked content. The content can either be downloaded from the internet or imported using a pen drive."
-  },
+    },
     "directories": {
       "output": "./publish/${version}/${os}/${arch}"
     },
     "publish": {
       "provider": "generic",
-      "url": "http://localhost:8050/publish",
+      "url": "http://localhost:8050",
       "publishAutoUpdate": true
     }
   }

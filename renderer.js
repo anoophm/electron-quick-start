@@ -5,8 +5,8 @@
 let version = window.location.hash.substring(1);
 document.getElementById('version').innerText = version;
 // Listen for messages
-const {ipcRenderer} = require('electron');
-ipcRenderer.on('message', function(event, text) {
+const { ipcRenderer } = require('electron');
+ipcRenderer.on('message', function (event, text) {
   console.log('got message');
   var container = document.getElementById('messages');
   var message = document.createElement('div');

@@ -1,0 +1,12 @@
+version: 1.0.0
+files:
+  - url: electron-quick-start-1.0.0-mac.zip
+    sha512: 67fFEIqJUB3R/Pt11QFEF41Az/z3i0ySinwUDG/nf7T1FS6uxKb3HbLeA7nNfw7NeGGcoq9YBsrVadwuy9qYEg==
+    size: 61431309
+    blockMapSize: 65003
+  - url: electron-quick-start-1.0.0.dmg
+    sha512: +Wfl9nPo723i+CD4p3fVq68KvEK3LnO3vARwlX3/JS0JCwOkbRGCvTmpnZwWXdw6iGQuMnqpMboGV9gtwyir2A==
+    size: 63728032
+path: electron-quick-start-1.0.0-mac.zip
+sha512: 67fFEIqJUB3R/Pt11QFEF41Az/z3i0ySinwUDG/nf7T1FS6uxKb3HbLeA7nNfw7NeGGcoq9YBsrVadwuy9qYEg==
+releaseDate: '2019-09-27T10:08:26.117Z'
