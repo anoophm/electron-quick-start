@@ -4,11 +4,13 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
+    "dist-linux-p": "electron-builder -l --x64 -p always",
     "start": "electron .",
     "electron-builder": "electron-builder",
     "postinstall": "electron-builder install-app-deps",
     "dist-mac": "electron-builder -m --x64",
-    "dist-mac-p": "electron-builder -m --x64 -p always"
+    "dist-mac-p": "electron-builder -m --x64 -p always",
+    "dist-win-p": "electron-builder -w --x64 -p always"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -40,8 +42,23 @@
     ],
     "mac": {
       "icon": "build/icons/mac/icon.icns",
-      "target": ["dmg", "zip"]
+      "target": [
+        "dmg",
+        "zip"
+      ]
     },
+    "win": {
+      "icon": "build/icons/win/icon.ico"
+    },
+    "linux": {
+      "icon": "build/icons/png",
+      "target": [
+          "AppImage"
+      ],
+      "category": "Education",
+      "synopsis": "A desktop learning application with curriculum-linked content for teachers and students",
+      "description": "The Desktop Application offers teachers and students unlimited access to curriculum-linked content. The content can either be downloaded from the internet or imported using a pen drive."
+  },
     "directories": {
       "output": "./publish/${version}/${os}/${arch}"
     },
